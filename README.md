@@ -61,10 +61,13 @@ It looks like this ![default web browser](./images/Default%20Wesever%20Page.PNG)
 * Click Open.
 * Click Yes when prompted to allow a first connection to this remote SSH server. Because you are using a key pair for authentication, you will not be prompted for a password.
 * Type the following into PuTTY or Terminal window in order to create an index.php file at the root of your HTTP web server HTML document directory:
+```
 cd /var/www/html
 sudo nano index.php
+```
 * Copy the following code to a text file, and then copy it from the text file to Nano:
- <?php
+```
+<?php
  $url = "http://169.254.169.254/latest/meta-data/instance-id";
  $instance_id = file_get_contents($url);
  echo "Instance ID: <b>" . $instance_id . "</b><br/>";
@@ -72,6 +75,7 @@ sudo nano index.php
  $zone = file_get_contents($url);
  echo "Zone: <b>" . $zone . "</b><br/>";
  ?>
+ ```
 * Press CTRL+O, ENTER to save your document as index.php.
 * Press CTRL+X to exit the Nano editor.
 * Close your PuTTY or Terminal window.
